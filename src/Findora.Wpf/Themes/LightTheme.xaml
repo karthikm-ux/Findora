@@ -1,0 +1,232 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ================================================================= -->
+    <!-- FINDORA LIQUID GLASS DESIGN SYSTEM - LIGHT THEME (CRYSTAL ICE)    -->
+    <!-- Apple-Inspired Optical Refraction, Specular Bevels & Depth        -->
+    <!-- ================================================================= -->
+
+    <!-- 1. Pure Transmission Glass Base (High transmission frosted quartz) -->
+    <LinearGradientBrush x:Key="LiquidGlassTransmissionBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#45FFFFFF" Offset="0.0" />
+        <GradientStop Color="#30F8FAFC" Offset="0.6" />
+        <GradientStop Color="#22E2E8F0" Offset="1.0" />
+    </LinearGradientBrush>
+    
+    <!-- Backward compatibility alias -->
+    <LinearGradientBrush x:Key="WindowGlassBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#45FFFFFF" Offset="0.0" />
+        <GradientStop Color="#30F8FAFC" Offset="0.6" />
+        <GradientStop Color="#22E2E8F0" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GlassWindowGradient" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#45FFFFFF" Offset="0.0" />
+        <GradientStop Color="#30F8FAFC" Offset="0.6" />
+        <GradientStop Color="#22E2E8F0" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 2. Outer Bevel & Caustic Refraction Rim -->
+    <LinearGradientBrush x:Key="LiquidGlassBevelBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#85FFFFFF" Offset="0.0" />
+        <GradientStop Color="#3094A3B8" Offset="0.25" />
+        <GradientStop Color="#1864748B" Offset="0.75" />
+        <GradientStop Color="#35CBD5E1" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="WindowBorderBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#85FFFFFF" Offset="0.0" />
+        <GradientStop Color="#3094A3B8" Offset="0.25" />
+        <GradientStop Color="#1864748B" Offset="0.75" />
+        <GradientStop Color="#35CBD5E1" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GlassRimBorderGradient" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#85FFFFFF" Offset="0.0" />
+        <GradientStop Color="#3094A3B8" Offset="0.25" />
+        <GradientStop Color="#1864748B" Offset="0.75" />
+        <GradientStop Color="#35CBD5E1" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 3. Internal Sub-Surface Thickness Bevel -->
+    <LinearGradientBrush x:Key="LiquidGlassInnerBevelBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#50FFFFFF" Offset="0.0" />
+        <GradientStop Color="#180284C7" Offset="0.3" />
+        <GradientStop Color="#00000000" Offset="0.7" />
+        <GradientStop Color="#200284C7" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 4. Top-Edge Specular Fresnel Highlight -->
+    <LinearGradientBrush x:Key="TopReflectionBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#00FFFFFF" Offset="0.0" />
+        <GradientStop Color="#70FFFFFF" Offset="0.2" />
+        <GradientStop Color="#A0FFFFFF" Offset="0.5" />
+        <GradientStop Color="#70FFFFFF" Offset="0.8" />
+        <GradientStop Color="#00FFFFFF" Offset="1.0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="TopReflectionGradient" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#00FFFFFF" Offset="0.0" />
+        <GradientStop Color="#70FFFFFF" Offset="0.2" />
+        <GradientStop Color="#A0FFFFFF" Offset="0.5" />
+        <GradientStop Color="#70FFFFFF" Offset="0.8" />
+        <GradientStop Color="#00FFFFFF" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 5. Bottom Caustic Rebound Glint -->
+    <LinearGradientBrush x:Key="BottomCausticBrush" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#00000000" Offset="0.0" />
+        <GradientStop Color="#200284C7" Offset="0.25" />
+        <GradientStop Color="#400284C7" Offset="0.5" />
+        <GradientStop Color="#200284C7" Offset="0.75" />
+        <GradientStop Color="#00000000" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 6. Search Surface & Dynamic Focus Lens -->
+    <SolidColorBrush x:Key="SearchSurfaceBrush" Color="#30FFFFFF" />
+    <SolidColorBrush x:Key="SearchBorderBrush" Color="#250284C7" />
+    <SolidColorBrush x:Key="SearchFocusBorderBrush" Color="#600284C7" />
+
+    <!-- 7. Sub-surfaces & Separator Lines -->
+    <SolidColorBrush x:Key="SecondarySurfaceBrush" Color="#18E2E8F0" />
+    <SolidColorBrush x:Key="GlassEdgeBrush" Color="#180F172A" />
+    <SolidColorBrush x:Key="BorderGlassEdgeBrush" Color="#200284C7" />
+    <SolidColorBrush x:Key="SeparatorBrush" Color="#1564748B" />
+
+    <!-- 8. Typography (Crisp 100% Opaque Foreground) -->
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#0F172A" />
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#0F172A" />
+    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#334155" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#334155" />
+    <SolidColorBrush x:Key="MutedTextBrush" Color="#64748B" />
+    <SolidColorBrush x:Key="TextMutedBrush" Color="#64748B" />
+
+    <!-- 9. Liquid Accents -->
+    <SolidColorBrush x:Key="AccentBrush" Color="#0284C7" />
+    <SolidColorBrush x:Key="CyanAccentBrush" Color="#0284C7" />
+    <SolidColorBrush x:Key="PerfAccentBrush" Color="#0D9488" />
+    <SolidColorBrush x:Key="MintGreenBrush" Color="#0D9488" />
+    <SolidColorBrush x:Key="MintGreenBrightBrush" Color="#059669" />
+
+    <!-- 10. Interactive Liquid Lens Rows (Hover & Selected States) -->
+    <SolidColorBrush x:Key="HoverBrush" Color="#12000000" />
+    <SolidColorBrush x:Key="SelectionBrush" Color="#1A0284C7" />
+    <SolidColorBrush x:Key="SelectionBorderBrush" Color="#350284C7" />
+    <LinearGradientBrush x:Key="SelectionPillGradient" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#200284C7" Offset="0.0" />
+        <GradientStop Color="#0E0369A1" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <!-- 11. Keycap Badges -->
+    <SolidColorBrush x:Key="KeycapBackgroundBrush" Color="#18CBD5E1" />
+    <SolidColorBrush x:Key="KeycapBorderBrush" Color="#3064748B" />
+    <SolidColorBrush x:Key="KeycapTextBrush" Color="#0369A1" />
+
+    <Style x:Key="KeycapBadgeStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource KeycapBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource KeycapBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="5,2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- 12. Minimal Translucent ScrollBar -->
+    <Style x:Key="GlassScrollBarThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border CornerRadius="3" Background="#250284C7" Margin="2,0" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#550284C7" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type ScrollBar}">
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Width" Value="6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid Background="Transparent">
+                        <Track x:Name="PART_Track" IsDirectionReversed="true">
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource GlassScrollBarThumb}" />
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 13. Translucent Glass ContextMenu -->
+    <Style x:Key="DarkGlassContextMenu" TargetType="ContextMenu">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Border Background="#E8F8FAFC" BorderBrush="#3594A3B8" BorderThickness="1.2"
+                            CornerRadius="12" Padding="6,8" Width="250">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#000000" BlurRadius="20" ShadowDepth="3" Opacity="0.18" />
+                        </Border.Effect>
+                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GlassMenuItemStyle" TargetType="MenuItem">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="12.5" />
+        <Setter Property="Padding" Value="10,6" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Border x:Name="MenuBorder" CornerRadius="6" Background="Transparent" Padding="{TemplateBinding Padding}" Margin="2,1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Grid.Column="0" ContentSource="Icon" Margin="0,0,10,0" VerticalAlignment="Center" />
+                            <ContentPresenter Grid.Column="1" ContentSource="Header" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                            <TextBlock Grid.Column="2" Text="{TemplateBinding InputGestureText}"
+                                       Foreground="{StaticResource MutedTextBrush}" FontSize="11" Margin="14,0,0,0" VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="MenuBorder" Property="Background" Value="#1E0284C7" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.45" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GlassMenuSeparatorStyle" TargetType="Separator">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Rectangle Height="1" Fill="#1864748B" Margin="8,4" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

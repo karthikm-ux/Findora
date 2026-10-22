@@ -1,0 +1,222 @@
+<Window x:Class="Findora.Wpf.Views.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Findora"
+        Width="500" Height="410"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded">
+
+    <Grid>
+        <!-- Outer Card Surface: Translucent Liquid Glass -->
+        <Border x:Name="SplashCard" CornerRadius="20" BorderBrush="{DynamicResource LiquidGlassBevelBrush}" BorderThickness="1.2" Margin="16"
+                Background="{DynamicResource LiquidGlassTransmissionBrush}"
+                RenderTransformOrigin="0.5,0.5">
+            <Border.Effect>
+                <DropShadowEffect Color="#000000" BlurRadius="30" ShadowDepth="6" Opacity="0.45" />
+            </Border.Effect>
+
+            <!-- Internal Sub-Surface Thickness Bevel -->
+            <Border CornerRadius="19" BorderThickness="1" BorderBrush="{DynamicResource LiquidGlassInnerBevelBrush}">
+                <Grid>
+                    <!-- Bottom Caustic Rebound Glint -->
+                    <Border Height="1" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Margin="30,0,30,1"
+                            Background="{DynamicResource BottomCausticBrush}" Opacity="0.75" />
+
+                    <Grid Margin="24,28,24,24">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="180" /> <!-- 1. Central Graphic / Orb / Files -->
+                            <RowDefinition Height="Auto" /> <!-- 2. Typography Wordmark & Status -->
+                            <RowDefinition Height="*" />    <!-- 3. Progress Line & Error Panel -->
+                        </Grid.RowDefinitions>
+
+                        <!-- Top-Edge Light Reflection -->
+                        <Border Grid.Row="0" Height="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="18,-27,18,0"
+                                Background="{DynamicResource TopReflectionBrush}" IsHitTestVisible="False" />
+
+                <!-- Row 0: Central Luminous Emblem & Floating Artifacts -->
+                <Canvas Grid.Row="0" Width="180" Height="180" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Concentric Soft Glow Auras -->
+                    <Ellipse Canvas.Left="15" Canvas.Top="15" Width="150" Height="150">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#3036D9FF" Offset="0.0" />
+                                <GradientStop Color="#151677FF" Offset="0.6" />
+                                <GradientStop Color="#00000000" Offset="1.0" />
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+
+                    <!-- Scanning Track Rings (Continuous rotation) -->
+                    <Ellipse x:Name="ScanningTrack" Canvas.Left="26" Canvas.Top="26" Width="128" Height="128"
+                             Stroke="#36D9FF" StrokeThickness="1.5" StrokeDashArray="4 12" StrokeDashCap="Round"
+                             RenderTransformOrigin="0.5,0.5" Opacity="0.75">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform x:Name="TrackRotate" Angle="0" />
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+
+                    <!-- Floating Orbiting File Badges (Stage 2 & 3) -->
+                    <!-- Badge 1: PDF (Top Left) -->
+                    <Border x:Name="FileBadgePdf" Canvas.Left="12" Canvas.Top="38" Width="26" Height="32"
+                            Background="#0C1D3E" BorderBrush="#EF4444" BorderThickness="1.2" CornerRadius="4" Opacity="0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#EF4444" BlurRadius="8" ShadowDepth="0" Opacity="0.4" />
+                        </Border.Effect>
+                        <TextBlock Text="PDF" FontFamily="Segoe UI" FontSize="8" FontWeight="Bold" Foreground="#FCA5A5"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <!-- Badge 2: Image PNG (Bottom Left) -->
+                    <Border x:Name="FileBadgeImg" Canvas.Left="18" Canvas.Top="115" Width="28" Height="32"
+                            Background="#0C1D3E" BorderBrush="#38BDF8" BorderThickness="1.2" CornerRadius="4" Opacity="0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#38BDF8" BlurRadius="8" ShadowDepth="0" Opacity="0.4" />
+                        </Border.Effect>
+                        <TextBlock Text="🖼️" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <!-- Badge 3: Folder (Top Right) -->
+                    <Border x:Name="FileBadgeFolder" Canvas.Left="142" Canvas.Top="45" Width="28" Height="26"
+                            Background="#0C1D3E" BorderBrush="#F59E0B" BorderThickness="1.2" CornerRadius="4" Opacity="0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#F59E0B" BlurRadius="8" ShadowDepth="0" Opacity="0.4" />
+                        </Border.Effect>
+                        <TextBlock Text="📁" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <!-- Badge 4: Audio / Code (Bottom Right) -->
+                    <Border x:Name="FileBadgeCode" Canvas.Left="138" Canvas.Top="118" Width="26" Height="32"
+                            Background="#0C1D3E" BorderBrush="#8B5CF6" BorderThickness="1.2" CornerRadius="4" Opacity="0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#8B5CF6" BlurRadius="8" ShadowDepth="0" Opacity="0.4" />
+                        </Border.Effect>
+                        <TextBlock Text="&lt;/&gt;" FontFamily="Consolas" FontSize="8.5" FontWeight="Bold" Foreground="#C4B5FD"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+
+                    <!-- 3D Stacked Database Cylinder (Stage 3) -->
+                    <StackPanel x:Name="DatabaseIconPanel" Canvas.Left="66" Canvas.Top="105" Width="48" Opacity="0">
+                        <!-- Disc 1 -->
+                        <Border Height="8" CornerRadius="4" Background="#38BDF8" BorderBrush="#0284C7" BorderThickness="1" Margin="0,0,0,2">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#38BDF8" BlurRadius="6" ShadowDepth="0" Opacity="0.6" />
+                            </Border.Effect>
+                        </Border>
+                        <!-- Disc 2 -->
+                        <Border Height="8" CornerRadius="4" Background="#1D4ED8" BorderBrush="#38BDF8" BorderThickness="1" Margin="0,0,0,2" />
+                        <!-- Disc 3 -->
+                        <Border Height="8" CornerRadius="4" Background="#0C235A" BorderBrush="#1D4ED8" BorderThickness="1" />
+                    </StackPanel>
+
+                    <!-- Central Glass Magnifying Glass Emblem -->
+                    <Border x:Name="EmblemCircle" Canvas.Left="47" Canvas.Top="47" Width="86" Height="86"
+                            CornerRadius="43" Background="#07183B" BorderBrush="#36D9FF" BorderThickness="2.4"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#36D9FF" BlurRadius="22" ShadowDepth="0" Opacity="0.65" />
+                        </Border.Effect>
+                        <Border.RenderTransform>
+                            <ScaleTransform x:Name="EmblemScale" ScaleX="1" ScaleY="1" />
+                        </Border.RenderTransform>
+
+                        <Canvas Width="42" Height="42" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <!-- Lens ring -->
+                            <Ellipse Canvas.Left="3" Canvas.Top="3" Width="23" Height="23"
+                                     Stroke="#36D9FF" StrokeThickness="3.4" />
+                            <!-- Lens handle -->
+                            <Line X1="20" Y1="20" X2="36" Y2="36"
+                                  Stroke="#FFFFFF" StrokeThickness="4.2" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                                <Line.Effect>
+                                    <DropShadowEffect Color="#1677FF" BlurRadius="8" ShadowDepth="0" Opacity="0.8" />
+                                </Line.Effect>
+                            </Line>
+                        </Canvas>
+                    </Border>
+
+                    <!-- Success Checkmark Badge (Stage 4) -->
+                    <Border x:Name="SuccessCheckmarkBadge" Canvas.Left="106" Canvas.Top="106" Width="30" Height="30"
+                            CornerRadius="15" Background="#10B981" BorderBrush="#FFFFFF" BorderThickness="2"
+                            RenderTransformOrigin="0.5,0.5" Opacity="0">
+                        <Border.RenderTransform>
+                            <ScaleTransform x:Name="CheckmarkScale" ScaleX="0" ScaleY="0" />
+                        </Border.RenderTransform>
+                        <Border.Effect>
+                            <DropShadowEffect Color="#10B981" BlurRadius="12" ShadowDepth="0" Opacity="0.8" />
+                        </Border.Effect>
+                        <TextBlock Text="✓" FontFamily="Segoe UI" FontSize="16" FontWeight="Bold" Foreground="#FFFFFF"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-2,0,0" />
+                    </Border>
+                </Canvas>
+
+                <!-- Row 1: Typography Wordmark & Dynamic Status -->
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,6,0,14">
+                    <TextBlock Text="Findora" FontFamily="Segoe UI Variable Display, Segoe UI" FontSize="28" FontWeight="Bold"
+                               Foreground="{DynamicResource PrimaryTextBrush}" HorizontalAlignment="Center" />
+                    
+                    <!-- Main Subtitle (Transitions across stages) -->
+                    <TextBlock x:Name="StatusTextBlock" Text="Find anything. Instantly." FontFamily="Segoe UI" FontSize="13.5"
+                               Foreground="{DynamicResource SecondaryTextBrush}" HorizontalAlignment="Center" Margin="0,5,0,0" TextAlignment="Center" />
+
+                    <!-- Sub-status: e.g. "12,458 files indexed" -->
+                    <TextBlock x:Name="SubStatusTextBlock" Text="" FontFamily="Segoe UI" FontSize="11.5"
+                               Foreground="{DynamicResource MutedTextBrush}" HorizontalAlignment="Center" Margin="0,3,0,0" Visibility="Collapsed" />
+                </StackPanel>
+
+                <!-- Row 2: Glowing Progress Line & Error Panel -->
+                <Grid Grid.Row="2" VerticalAlignment="Center" Margin="36,0">
+                    <!-- Normal Progress Track -->
+                    <StackPanel x:Name="NormalProgressPanel">
+                        <Border Height="3" CornerRadius="1.5" Background="#0C1F42" HorizontalAlignment="Stretch">
+                            <Border x:Name="GlowProgressBar" Width="0" Height="3" HorizontalAlignment="Left" CornerRadius="1.5">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                        <GradientStop Color="#1677FF" Offset="0.0" />
+                                        <GradientStop Color="#36D9FF" Offset="0.7" />
+                                        <GradientStop Color="#FFFFFF" Offset="1.0" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#36D9FF" BlurRadius="8" ShadowDepth="0" Opacity="0.8" />
+                                </Border.Effect>
+                            </Border>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Error State Panel (if startup fails) -->
+                    <StackPanel x:Name="ErrorPanel" Visibility="Collapsed" HorizontalAlignment="Center">
+                        <TextBlock x:Name="ErrorTextBlock" Text="Engine startup encountered an issue."
+                                   FontFamily="Segoe UI" FontSize="12" Foreground="#F87171" HorizontalAlignment="Center" Margin="0,0,0,10" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="RetryButton" Content="Retry" Click="RetryButton_Click"
+                                    Background="#1677FF" Foreground="#FFFFFF" BorderThickness="0" Padding="16,5" Margin="0,0,8,0"
+                                    Cursor="Hand" FontFamily="Segoe UI" FontWeight="SemiBold">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6" />
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                            <Button x:Name="ExitButton" Content="Exit" Click="ExitButton_Click"
+                                    Background="#1E293B" Foreground="#94A3B8" BorderThickness="1" BorderBrush="#334155"
+                                    Padding="16,5" Cursor="Hand" FontFamily="Segoe UI" FontWeight="SemiBold">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6" />
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Border>
+</Grid>
+</Window>

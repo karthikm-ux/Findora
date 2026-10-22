@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{33CA0D7C-9488-41F7-B611-67F72CF0A810}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Findora.Wpf", "src\Findora.Wpf\Findora.Wpf.csproj", "{D2C000F9-3886-489F-BBD0-6158E105E7F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6D0CF93D-DF92-4A00-AAF5-3E590AB602FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotnet", "dotnet", "{67EBB3B3-FE12-42D5-A3A5-4EC052D340A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Findora.Wpf.Tests", "tests\dotnet\Findora.Wpf.Tests\Findora.Wpf.Tests.csproj", "{DBACC1D6-1E9D-4E51-82E9-B4021D997517}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2C000F9-3886-489F-BBD0-6158E105E7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2C000F9-3886-489F-BBD0-6158E105E7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2C000F9-3886-489F-BBD0-6158E105E7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2C000F9-3886-489F-BBD0-6158E105E7F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBACC1D6-1E9D-4E51-82E9-B4021D997517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBACC1D6-1E9D-4E51-82E9-B4021D997517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBACC1D6-1E9D-4E51-82E9-B4021D997517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBACC1D6-1E9D-4E51-82E9-B4021D997517}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2C000F9-3886-489F-BBD0-6158E105E7F2} = {33CA0D7C-9488-41F7-B611-67F72CF0A810}
+		{67EBB3B3-FE12-42D5-A3A5-4EC052D340A9} = {6D0CF93D-DF92-4A00-AAF5-3E590AB602FC}
+		{DBACC1D6-1E9D-4E51-82E9-B4021D997517} = {67EBB3B3-FE12-42D5-A3A5-4EC052D340A9}
+	EndGlobalSection
+EndGlobal
