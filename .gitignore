@@ -21,8 +21,7 @@ ENV/
 *.suo
 *.userosscache
 *.sln.docstates
-*.dll
-*.exe
+
 *.pdb
 
 # Allow source files and test projects
@@ -36,13 +35,11 @@ ENV/
 *.db-shm
 *.log
 
-build/py_dist/
 test.txt
 
 # Generated build and test output
-build/py_work/
-build/py_dist/
-dist/
+
+
 **/bin/
 **/obj/
 **/__pycache__/
